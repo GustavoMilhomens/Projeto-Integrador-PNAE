@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Planilha Excel</title>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .container { max-width: 400px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        input { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        select { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #217346; color: white; border: 5px solid #005000; border-radius: 4px; cursor: pointer; margin: 5px 0;}
+        button:hover { background-color: #1a5a37; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Adicionar à Planilha</h2>
+    <input type="text" id="nome" placeholder="Nome do Aluno">
+    <select name="Série" id="serie" placeholder="Escolha a Série">
+        <option value="1º Agricultura">1º Ano Agricultura</option>
+        <option value="2º Agricultura">2º Ano Agricultura</option>
+        <option value="3º Agricultura">3º Ano Agricultura</option>
+        <option value="1º Informática">1º Ano Informática</option>
+        <option value="2º Informática">2º Ano Informática</option>
+        <option value="3º Informática">3º Ano Informática</option>
+    </select>
+    <input type="text" id="matricula" placeholder="Matricula">
+    <button onclick="AdicionarAluno()">Adicionar Aluno</button>
+    <button onclick="gerarExcel()">Baixar Excel</button>
+</div>
+
+
+    <script>
+    // Planilha em memória
+    const dados = [
+        ["Nome do Aluno", "Série", "Matrícula",]
+    ];
+
+    function AdicionarAluno() {
+        const nome = document.getElementById('nome').value;
+        const serie = document.getElementById('serie').value;
+        const matricula = document.getElementById('matricula').value;
+
+        if (!nome || !serie || !matricula) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        
+
+        // Adiciona linha na planilha
+        dados.push([nome, serie, matricula,]);
+
+        // Limpa inputs
+        document.getElementById('nome').value = "";
+        document.getElementById('serie').value = "";
+        document.getElementById('matricula').value = "";
+
+        alert("Produto adicionado à planilha!");
+    }
+
+    function gerarExcel() {
+        if (dados.length === 1) {
+            alert("Nenhum produto adicionado!");
+            return;
+        }
+
+        const wb = XLSX.utils.book_new();
+        const ws = XLSX.utils.aoa_to_sheet(dados);
+
+        XLSX.utils.book_append_sheet(wb, ws, "Alunos");
+        XLSX.writeFile(wb, "Relatorio_Alunos.xlsx");
+    }
+</script>
+
+
+</body>
+</html>
