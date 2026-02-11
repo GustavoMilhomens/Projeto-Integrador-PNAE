@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Planilha Excel</title>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .container { max-width: 400px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        input { width: 100%; margin-bottom: 10px; padding: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #217346; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #1a5a37; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Adicionar à Planilha</h2>
+    <input type="text" id="nome" placeholder="Nome do Produto">
+    <input type="number" id="preco" placeholder="Preço (Ex: 50.00)">
+    <input type="number" id="qtd" placeholder="Quantidade">
+    <button onclick="gerarExcel()">Baixar Excel</button>
+</div>
+
+<script>
+    function gerarExcel() {
+        // 1. Pegar os valores dos campos
+        const nome = document.getElementById('nome').value;
+        const preco = document.getElementById('preco').value;
+        const qtd = document.getElementById('qtd').value;
+
+        if(!nome || !preco || !qtd) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        // 2. Criar os dados da planilha (Matriz de arrays)
+        // A primeira linha é o cabeçalho
+        const dados = [
+            ["Produto", "Preço", "Quantidade", "Total"],
+            [nome, parseFloat(preco), parseInt(qtd), (preco * qtd)]
+        ];
+
+        // 3. Criar o livro (workbook) e a folha (worksheet)
+        const wb = XLSX.utils.book_new();
+        const ws = XLSX.utils.aoa_to_sheet(dados);
+
+        // 4. Adicionar a folha ao livro
+        XLSX.utils.book_append_sheet(wb, ws, "Vendas");
+
+        // 5. Disparar o download do arquivo
+        XLSX.writeFile(wb, "Relatorio_Vendas.xlsx");
+    }
+</script>
+
+</body>
+</html>
