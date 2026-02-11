@@ -1,4 +1,4 @@
-# Projeto PNAI
+# Projeto PNAE
 Estamos Criando um Site que mostra uma lista de presença para facilitar os ajudantes no PNAE
 Estamos desenvolvendo um site com o objetivo de facilitar o controle da lista de presença do Programa Nacional de Alimentação Escolar (PNAE) no IFTO. A proposta é criar uma plataforma digital simples, organizada e de fácil utilização, voltada para auxiliar os servidores e colaboradores responsáveis pelo registro da presença dos alunos atendidos pelo programa.
 
