@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PNAE — Novo Registro de Aluno</title>
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="pnae-header">
+      <div class="pnae-header__brand">
+        <div class="pnae-logo" aria-hidden="true">
+          <span>P</span><span>N</span><span>A</span><span>E</span>
+        </div>
+        <div class="pnae-header__divider"></div>
+        <div class="pnae-header__titles">
+          <strong>Controle de Lanche</strong>
+          <small>PNAE — PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR</small>
+        </div>
+      </div>
+      <div class="pnae-header__user">
+        <div class="pnae-header__meta">
+          <strong>Dr. Fernando Neves</strong>
+          <span class="role-badge">Gerente</span>
+        </div>
+        <div class="avatar">FN</div>
+        <button
+          class="logout-btn"
+          title="Sair"
+          onclick="window.location.href = 'login.html'"
+        >
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Página sem sidebar (fluxo de cadastro em tela cheia, com breadcrumb
+     de volta para a listagem de alunos). -->
+    <main class="content-area content-area--wide">
+      <nav class="breadcrumb">
+        <a href="gerenciamento-alunos.html">Alunos</a>
+        <svg class="icon" viewBox="0 0 24 24">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+        <span>Cadastrar Novo</span>
+      </nav>
+
+      <div class="page-title-bar">
+        <div>
+          <h1>Novo Registro de Aluno</h1>
+          <p>
+            Preencha as informações cadastrais obrigatórias para emitir a
+            identificação do aluno.
+          </p>
+        </div>
+      </div>
+
+      <!-- O envio deste formulário é tratado em initCadastroAluno(),
+       dentro de assets/js/script.js -->
+      <form id="cadastro-form" class="form-card" novalidate>
+        <h2>Ficha Cadastral do Aluno</h2>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="nome">Nome Completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Ex: Maria Clara de Souza Santos"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="matricula">Matrícula PNAE</label>
+            <input
+              type="text"
+              id="matricula"
+              name="matricula"
+              placeholder="Ex: 2024.089.155"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="serie">Série / Ano Escolar</label>
+            <div class="select-wrapper">
+              <select id="serie" name="serie" required>
+                <!-- ! selecionar serie -->
+                <option value="" disabled selected>Selecione a série</option>
+                <option>6º Ano</option>
+                <option>7º Ano</option>
+                <option>8º Ano</option>
+                <option>9º Ano</option>
+              </select>
+              <svg class="icon" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="turno">Turno</label>
+            <div class="select-wrapper">
+              <select id="turno" name="turno" required>
+                <option value="" disabled selected>Selecione o turno</option>
+                <option>Matutino</option>
+                <option>Vespertino</option>
+              </select>
+              <svg class="icon" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="nascimento">Data de Nascimento</label>
+            <input
+              type="text"
+              id="nascimento"
+              name="nascimento"
+              placeholder="DD/MM/AAAA"
+            />
+          </div>
+          <div class="input-group">
+            <label for="responsavel">Nome do Responsável Legal</label>
+            <input
+              type="text"
+              id="responsavel"
+              name="responsavel"
+              placeholder="Nome completo do responsável"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="telefone">Telefone do Responsável</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="Ex: (81) 98888-7777"
+            />
+          </div>
+          <div class="input-group">
+            <label for="restricoes">Restrições Alimentares / Observações</label>
+            <textarea
+              id="restricoes"
+              name="restricoes"
+              rows="3"
+              placeholder="Digite alergias ou dietas especiais, se houver."
+            ></textarea>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn btn--outline"
+            onclick="window.location.href = 'gerenciamento-alunos.html'"
+          >
+            Cancelar
+          </button>
+          <button type="submit" class="btn btn--primary">
+            Salvar Registro
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

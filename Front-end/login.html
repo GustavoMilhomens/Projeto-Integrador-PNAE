@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <script src="assets/js/script.js" defer></script>
+    <!-- o defer faz com que o script espere o html rodar todo primeiro -->
+  </head>
+  <body class="login-page">
+    <!-- $ SUBSTITUÍVEL POR IMAGEM — ver comentário da classe .login-bg em style.css.
+       Pode remover esta div inteira sem quebrar o login: o formulário
+       continua funcionando, só perde o fundo decorativo. -->
+    <div class="login-bg" aria-hidden="true"></div>
+
+    <main class="login-card" role="main">
+      <div class="login-card__brand">
+        <!-- $ SUBSTITUÍVEL POR IMAGEM — logo, ver comentário de .pnae-logo em style.css -->
+        <div class="pnae-logo pnae-logo--lg" aria-hidden="true">
+          <span>P</span><span>N</span><span>A</span><span>E</span>
+        </div>
+        <div class="login-card__titles">
+          <h1>Acesso ao Sistema</h1>
+          <p>Programa Nacional de Alimentação Escolar</p>
+        </div>
+      </div>
+
+      <div
+        class="role-switcher"
+        role="tablist"
+        aria-label="Selecionar perfil de acesso"
+      >
+        <button
+          type="button"
+          class="role-tab is-active"
+          role="tab"
+          aria-selected="true"
+          data-role="bolsista"
+        >
+          Bolsista
+        </button>
+        <button
+          type="button"
+          class="role-tab"
+          role="tab"
+          aria-selected="false"
+          data-role="gerente"
+        >
+          Gerente
+        </button>
+      </div>
+
+      <!-- O JS que trata este formulário está em assets/js/script.js,
+         função initLogin() -->
+      <form id="login-form" class="login-form" novalidate>
+        <div class="input-group">
+          <label for="email">E-mail ou CPF</label>
+          <div class="input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="maria.silva@escola.gov.br"
+              autocomplete="username"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <div class="input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="••••••••••••"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="show-password" id="toggle-password">
+              Mostrar
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary login-submit">
+          Entrar no Sistema
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <a href="#">Esqueceu sua senha?</a>
+        <p>
+          Não tem conta? <a href="#" class="link-strong">Cadastre-se aqui</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

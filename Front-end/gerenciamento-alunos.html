@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PNAE — Gerenciamento de Alunos</title>
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="pnae-header">
+      <div class="pnae-header__brand">
+        <div class="pnae-logo" aria-hidden="true">
+          <span>P</span><span>N</span><span>A</span><span>E</span>
+        </div>
+        <div class="pnae-header__divider"></div>
+        <div class="pnae-header__titles">
+          <strong>Controle de Lanche</strong>
+          <small>PNAE — PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR</small>
+        </div>
+      </div>
+      <div class="pnae-header__user">
+        <div class="pnae-header__meta">
+          <strong>Dr. Fernando Neves</strong>
+          <span class="role-badge">Gerente</span>
+        </div>
+        <div class="avatar">FN</div>
+        <button
+          class="logout-btn"
+          title="Sair"
+          onclick="window.location.href = 'login.html'"
+        >
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <!-- ! gancho da sidebar (ver comentário completo em dashboard-gerente.html) -->
+      <div id="sidebar-root"></div>
+
+      <main class="content-area">
+        <div class="page-title-bar">
+          <div>
+            <h1>Gerenciamento de Alunos</h1>
+            <p>
+              Consulte a base de estudantes cadastrados, adicione novos ou
+              altere status.
+            </p>
+          </div>
+          <button
+            class="btn btn--primary"
+            onclick="window.location.href = 'cadastro-aluno.html'"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              style="width: 16px; height: 16px"
+            >
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            Novo Aluno
+          </button>
+        </div>
+
+        <section class="filters-card">
+          <div class="search-bar search-bar--flex">
+            <svg class="icon" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Buscar por nome, série ou matrícula..."
+            />
+          </div>
+          <div class="dropdown">
+            <span>Série: Todas</span
+            ><svg class="icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="dropdown">
+            <span>Status: Todos</span
+            ><svg class="icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+        </section>
+
+        <section class="table-card">
+          <div class="alunos-table__head">
+            <span class="col-num">#</span>
+            <span class="col-nome">NOME COMPLETO</span>
+            <span class="col-serie">SÉRIE</span>
+            <span class="col-turma">TURMA</span>
+            <span class="col-matricula">MATRÍCULA</span>
+            <span class="col-status">STATUS</span>
+            <span class="col-acoes">AÇÕES</span>
+          </div>
+
+          <!-- ! Esta div começa vazia de propósito. Quem preenche as linhas é
+           a função renderAlunos(), em assets/js/script.js, a partir do
+           array ALUNOS (que no futuro deve vir de uma API/banco de dados). -->
+          <div id="alunos-body" class="alunos-table__body"></div>
+
+          <div class="table-footer">
+            <span>Mostrando alunos cadastrados</span>
+            <div class="pages">
+              <button class="page-num is-active">1</button>
+              <button class="page-num">2</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

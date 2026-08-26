@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PNAE — Visão Geral do Programa</title>
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="pnae-header">
+      <div class="pnae-header__brand">
+        <div class="pnae-logo" aria-hidden="true">
+          <span>P</span><span>N</span><span>A</span><span>E</span>
+        </div>
+        <div class="pnae-header__divider"></div>
+        <div class="pnae-header__titles">
+          <strong>Controle de Lanche</strong>
+          <small>PNAE — PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR</small>
+        </div>
+      </div>
+      <div class="pnae-header__user">
+        <div class="pnae-header__meta">
+          <strong>Dr. Fernando Neves</strong>
+          <span class="role-badge">Gerente</span>
+        </div>
+        <div class="avatar">FN</div>
+        <button class="logout-btn" title="Sair" onclick="logout()">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <!-- ! A sidebar NÃO está escrita aqui em HTML — esta div vazia é o
+       "gancho" onde assets/js/script.js (função createSidebar) insere o
+       menu lateral inteiro via JavaScript. Se remover esta div, a página
+       simplesmente fica sem sidebar (o script já verifica isso sozinho). -->
+      <div id="sidebar-root"></div>
+
+      <main class="content-area">
+        <div class="page-title-bar">
+          <div>
+            <h1>Visão Geral do Programa</h1>
+            <p>Análise de conformidade de distribuição de lanche no Campus.</p>
+          </div>
+          <div class="dropdown">
+            <span>Esta Semana</span>
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+        </div>
+
+        <section class="kpi-row kpi-row--4">
+          <div class="kpi-card">
+            <div class="kpi-card__top">
+              <span class="kpi-card__label">Total de Alunos</span>
+              <span
+                class="kpi-card__icon"
+                style="
+                  background: var(--green-tint-10);
+                  color: var(--green-primary);
+                "
+              >
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                </svg>
+              </span>
+            </div>
+            <div class="kpi-card__value">247</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__top">
+              <span class="kpi-card__label">Entregas Hoje</span>
+              <span
+                class="kpi-card__icon"
+                style="
+                  background: var(--status-delivered-tint-10);
+                  color: var(--status-delivered-text);
+                "
+              >
+                <svg class="icon" viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+            </div>
+            <div class="kpi-card__value">183</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__top">
+              <span class="kpi-card__label">Alunos Pendentes</span>
+              <span
+                class="kpi-card__icon"
+                style="
+                  background: var(--status-pending-tint-10);
+                  color: var(--status-pending-text);
+                "
+              >
+                <svg class="icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </span>
+            </div>
+            <div class="kpi-card__value">64</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__top">
+              <span class="kpi-card__label">Taxa de Adesão</span>
+              <span
+                class="kpi-card__icon"
+                style="
+                  background: var(--chart-blue-tint-10);
+                  color: var(--chart-blue);
+                "
+              >
+                <svg class="icon" viewBox="0 0 24 24">
+                  <line x1="19" y1="5" x2="5" y2="19" />
+                  <circle cx="6.5" cy="6.5" r="2.5" />
+                  <circle cx="17.5" cy="17.5" r="2.5" />
+                </svg>
+              </span>
+            </div>
+            <div class="kpi-card__value">74%</div>
+          </div>
+        </section>
+
+        <!-- ! LÓGICA DE BANCO DE DADOS (mock) — os valores dos gráficos abaixo
+         (altura das barras, percentuais do donut) estão fixos no HTML.
+         Numa versão com backend, viriam de uma API e seriam desenhados
+         via JS, similar ao que já acontece com a tabela de alunos. -->
+        <section class="charts-row">
+          <div class="chart-card">
+            <h3>Entregas por Dia da Semana</h3>
+            <div class="bar-chart">
+              <div class="bar-chart__col">
+                <div class="bar-chart__bar" style="height: 99px"></div>
+                <span>Seg</span>
+              </div>
+              <div class="bar-chart__col">
+                <div class="bar-chart__bar" style="height: 108px"></div>
+                <span>Ter</span>
+              </div>
+              <div class="bar-chart__col">
+                <div class="bar-chart__bar" style="height: 103px"></div>
+                <span>Qua</span>
+              </div>
+              <div class="bar-chart__col">
+                <div class="bar-chart__bar" style="height: 110px"></div>
+                <span>Qui</span>
+              </div>
+              <div class="bar-chart__col">
+                <div class="bar-chart__bar" style="height: 93px"></div>
+                <span>Sex</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3>Distribuição de Lanches por Série</h3>
+            <div class="donut-row">
+              <!--! BACKAND FALTANDO precisa configurar o porcentual para o grafico-->
+              <div class="donut" style="--p1: 35; --p2: 25; --p3: 22; --p4: 18">
+                <span>100%</span>
+              </div>
+              <ul class="donut-legend">
+                <li>
+                  <i style="background: var(--green-primary)"></i>6º Ano
+                  <strong>35%</strong>
+                </li>
+                <li>
+                  <i style="background: var(--chart-green-2)"></i>7º Ano
+                  <strong>25%</strong>
+                </li>
+                <li>
+                  <i style="background: var(--chart-blue)"></i>8º Ano
+                  <strong>22%</strong>
+                </li>
+                <li>
+                  <i style="background: var(--chart-yellow)"></i>9º Ano
+                  <strong>18%</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="recent-card">
+          <!--! BACKAND FALTANDO precisa configurar o porcentual para o grafico-->
+          <h3>Últimas Entregas Registradas</h3>
+          <div class="recent-list">
+            <div class="recent-row">
+              <strong>Carlos Augusto</strong><span>8º Ano B</span
+              ><span class="time">10:24 AM</span
+              ><span class="badge badge--delivered">Entregue</span>
+            </div>
+            <div class="recent-row">
+              <strong>Eduarda Lima</strong><span>9º Ano C</span
+              ><span class="time">10:22 AM</span
+              ><span class="badge badge--delivered">Entregue</span>
+            </div>
+            <div class="recent-row">
+              <strong>Gustavo Franco</strong><span>6º Ano A</span
+              ><span class="time">10:19 AM</span
+              ><span class="badge badge--delivered">Entregue</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
