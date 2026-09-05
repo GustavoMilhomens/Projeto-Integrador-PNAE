@@ -8,10 +8,33 @@ Turma: 20261.3.190.406.11 | Ano/Período Letivo: 2026/1
 
 ## Participantes do Projeto
 
-- Pedro Fernandes Macédo
-- Gustavo Milhomens dos Santos
-- Arthur Souza Aguiar Rocha
-- Kauan Noleto Barros
+| # | Nome | Função |
+|---|------|--------|
+| 01 | Ana Laura Mestriner Araujo | QA Tester |
+| 02 | Andressa Gomes Rodrigues | QA Tester |
+| 03 | Arthur Dias Andrade | Backend |
+| 04 | Arthur Gomes Pacheco | Documentação |
+| 05 | Arthur Pereira Feitosa | Backend |
+| 06 | Arthur Resende de Almeida | Backend |
+| 07 | Arthur Souza Aguiar Rocha | Backend |
+| 08 | Bruno Barbosa Aguiar | Documentação |
+| 09 | Cleber Alves dos Santos | Front-end |
+| 10 | Elias Piêtro Nogueira Matos Veras | Backend |
+| 11 | Eloysa Castro Alves | Documentação |
+| 12 | Gustavo Milhomens dos Santos | Front-end |
+| 13 | João Pedro Medeiros Machado | Front-end |
+| 14 | Joseanny Cabral Vieira | Documentação |
+| 15 | Juliana Pereira Gama Alves | Documentação |
+| 16 | Kauan Noleto Barros | QA Tester |
+| 17 | Lehvy Gomes Machado | Backend |
+| 18 | Letícia Neves Oliveira | QA Tester |
+| 19 | Lucas Dairan Martins da Silva Galvão | Front-end |
+| 20 | Osmar Alves Moreira Neto | Backend |
+| 21 | Pedro Fernandes Macédo | Front-end |
+| 22 | Rebeca Sofia Marciel Soares | QA Tester |
+| 23 | Sara de Souza Galvão | Documentação |
+| 24 | Vitor Gabriel Valadares da Silva | Front-end |
+| 25 | Yasmim Silva Lataliza | QA Tester |
 
 ## Sobre o Projeto
 
@@ -68,32 +91,3 @@ O principal objetivo do projeto é tornar o processo de controle de presença ma
 └── README.md                        # Informações do repositório
 ```
 
-## Relação de Alunos - Turma 20261.3.190.406.11
-
-| # | Nome | Função |
-|---|------|--------|
-| 01 | Ana Laura Mestriner Araujo | QA Tester |
-| 02 | Andressa Gomes Rodrigues | QA Tester |
-| 03 | Arthur Dias Andrade | Backend |
-| 04 | Arthur Gomes Pacheco | Documentação |
-| 05 | Arthur Pereira Feitosa | Backend |
-| 06 | Arthur Resende de Almeida | Backend |
-| 07 | Arthur Souza Aguiar Rocha | Backend |
-| 08 | Bruno Barbosa Aguiar | Documentação |
-| 09 | Cleber Alves dos Santos | Front-end |
-| 10 | Elias Piêtro Nogueira Matos Veras | Backend |
-| 11 | Eloysa Castro Alves | Documentação |
-| 12 | Gustavo Milhomens dos Santos | Front-end |
-| 13 | João Pedro Medeiros Machado | Front-end |
-| 14 | Joseanny Cabral Vieira | Documentação |
-| 15 | Juliana Pereira Gama Alves | Documentação |
-| 16 | Kauan Noleto Barros | QA Tester |
-| 17 | Lehvy Gomes Machado | Backend |
-| 18 | Letícia Neves Oliveira | QA Tester |
-| 19 | Lucas Dairan Martins da Silva Galvão | Front-end |
-| 20 | Osmar Alves Moreira Neto | Backend |
-| 21 | Pedro Fernandes Macédo | Front-end |
-| 22 | Rebeca Sofia Marciel Soares | QA Tester |
-| 23 | Sara de Souza Galvão | Documentação |
-| 24 | Vitor Gabriel Valadares da Silva | Front-end |
-| 25 | Yasmim Silva Lataliza | QA Tester |
