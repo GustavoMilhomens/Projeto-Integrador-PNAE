@@ -2042,8 +2042,8 @@ body.dark_theme .landing-bg {
   width: 46px;
   height: 26px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: var(--bg-app);
+  border: 1px solid var(--status-delivered-text);
+  background: var(--status-delivered-text);
   position: relative;
   padding: 0;
   transition:
